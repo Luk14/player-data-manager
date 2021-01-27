@@ -9,7 +9,6 @@ import java.util.Objects;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 public class UserDTO
 {
 
@@ -19,6 +18,56 @@ public class UserDTO
     private String lname;
     private String email;
     private Statistics statistics;
+
+    public int getId()
+    {
+        return id;
+    }
+
+    public void setId(int id)
+    {
+        this.id = id;
+    }
+
+    public String getUsername()
+    {
+        return username;
+    }
+
+    public void setUsername(String username)
+    {
+        this.username = username;
+    }
+
+    public String getFname()
+    {
+        return fname;
+    }
+
+    public void setFname(String fname)
+    {
+        this.fname = fname;
+    }
+
+    public String getEmail()
+    {
+        return email;
+    }
+
+    public void setEmail(String email)
+    {
+        this.email = email;
+    }
+
+    public Statistics getStatistics()
+    {
+        return statistics;
+    }
+
+    public void setStatistics(Statistics statistics)
+    {
+        this.statistics = statistics;
+    }
 
     @Override
     public boolean equals(Object o)
