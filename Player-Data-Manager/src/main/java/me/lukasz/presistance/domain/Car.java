@@ -10,16 +10,17 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Statistics
+public class Car
 {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int blocks_walked;
-    private int blocks_broken;
-    private int kills;
-    private int deaths;
-    @OneToOne
+    private String registration;
+    private String productionDate;
+    private String color;
+    private int topSpeed;
+    private double zeroToSixty;
+    @ManyToOne
     private User user;
 }

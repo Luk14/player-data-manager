@@ -1,5 +1,5 @@
 package me.lukasz.rest;
 
-public class StatisticsController
+public class CarController
 {
 }

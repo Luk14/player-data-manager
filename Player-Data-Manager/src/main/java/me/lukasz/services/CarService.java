@@ -1,8 +1,8 @@
 package me.lukasz.services;
 
-import me.lukasz.presistance.domain.Statistics;
-import me.lukasz.presistance.dto.StatisticsDTO;
-import me.lukasz.presistance.repos.StatisticsRepo;
+import me.lukasz.presistance.domain.Car;
+import me.lukasz.presistance.dto.CarDTO;
+import me.lukasz.presistance.repos.CarRepo;
 import me.lukasz.utils.MyBeanUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -11,50 +11,50 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class StatisticsService
+public class CarService
 {
 
-    private StatisticsRepo statisticsRepo;
+    private CarRepo carRepo;
     private ModelMapper modelMapper;
 
-    public StatisticsService(StatisticsRepo statisticsRepo, ModelMapper modelMapper)
+    public CarService(CarRepo carRepo, ModelMapper modelMapper)
     {
-        this.statisticsRepo = statisticsRepo;
+        this.carRepo = carRepo;
         this.modelMapper = modelMapper;
     }
 
-    private StatisticsDTO mapToDTO(Statistics statistics)
+    private CarDTO mapToDTO(Car car)
     {
-        return modelMapper.map(statistics, StatisticsDTO.class);
+        return modelMapper.map(car, CarDTO.class);
     }
 
-    public List<StatisticsDTO> readAll()
+    public List<CarDTO> readAll()
     {
-        return statisticsRepo.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());
+        return carRepo.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());
     }
 
-    public StatisticsDTO getStatistics(int id)
+    public CarDTO getCar(int id)
     {
-        return mapToDTO(statisticsRepo.findById(id).isPresent() ? statisticsRepo.getOne(id) : null);
+        return mapToDTO(carRepo.findById(id).isPresent() ? carRepo.getOne(id) : null);
     }
 
-    public StatisticsDTO createStatistics(Statistics statistics)
+    public CarDTO createCar(Car car)
     {
-        return mapToDTO(statisticsRepo.save(statistics));
+        return mapToDTO(carRepo.save(car));
     }
 
-    public StatisticsDTO updateStatistics(int id, Statistics statistics)
+    public CarDTO updateCar(int id, Car car)
     {
-        if (!statisticsRepo.existsById(id)) return null;
-        Statistics update = statisticsRepo.findById(id).get();
-        MyBeanUtil.mergeNotNull(statistics, update);
-        return mapToDTO(statisticsRepo.save(update));
+        if (!carRepo.existsById(id)) return null;
+        Car update = carRepo.findById(id).get();
+        MyBeanUtil.mergeNotNull(car, update);
+        return mapToDTO(carRepo.save(update));
     }
 
-    public boolean deleteStatistics(int id)
+    public boolean deleteCar(int id)
     {
-        statisticsRepo.deleteById(id);
-        return !statisticsRepo.existsById(id);
+        carRepo.deleteById(id);
+        return !carRepo.existsById(id);
     }
-    
+
 }
