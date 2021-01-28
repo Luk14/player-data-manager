@@ -54,7 +54,7 @@ public class UserService
     public boolean deleteUser(int id)
     {
         userRepo.deleteById(id);
-        return !userRepo.existsById(id);
+        return userRepo.existsById(id);
     }
 
 }
