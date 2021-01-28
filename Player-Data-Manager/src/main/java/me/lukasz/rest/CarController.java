@@ -6,10 +6,7 @@ import me.lukasz.services.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -39,9 +36,16 @@ public class CarController
     }
 
     @GetMapping("/create")
-    public ResponseEntity<CarDTO> create(Car car)
+    public ResponseEntity<CarDTO> create(@RequestBody Car car)
     {
         return new ResponseEntity<>(carService.createCar(car), HttpStatus.CREATED);
     }
+
+    @GetMapping("/update/{id}")
+    public ResponseEntity<CarDTO> update(@PathVariable("id")int id,@RequestBody Car car)
+    {
+        return new ResponseEntity<>(carService.updateCar(id, car), HttpStatus.ACCEPTED);
+    }
+
 
 }
