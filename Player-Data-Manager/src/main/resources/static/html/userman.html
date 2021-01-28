@@ -33,7 +33,46 @@
             </div>
         </div>
     </nav>
-
+    <div class="container">
+        </br>
+        <div class="row">
+            <h1 class="text-white">Create User</h1>
+            <p id="createduser"></p>
+        </div>
+        <div class="row">
+            <h1 class="text-white">Read All User</h1>
+            <div class="col-sm-5">
+                <p id="allusers" class="text-white"></p>
+                <button type="button" class="btn btn-secondary" id="readall">Read All</button>
+            </div>
+        </div>
+        </br>
+        <div class="row">
+            <h1 class="text-white">Read User</h1>
+            <p id="user" class="text-white"></p>
+            <div class="col-sm-3">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">User ID</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" id="userid">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-secondary" id="read">Read</button>
+            </div>
+        </div>
+        </br>
+        <div class="row">
+            <h1 class="text-white">Update User</h1>
+            <p id="updateduser"></p>
+        </div>
+        </br>
+        <div class="row">
+            <h1 class="text-white">Delete User</h1>
+            <p id="deleteduser"></p>
+        </div>
+        </br>
+    </div>
     <div class="card text-center bg-dark">
         <div class="card-body">
             <a id="footer">
@@ -41,6 +80,7 @@
             </a>
         </div>
     </div>
+    <script src="../js/user.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
