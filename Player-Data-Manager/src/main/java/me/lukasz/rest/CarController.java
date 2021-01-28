@@ -35,19 +35,19 @@ public class CarController
         return ResponseEntity.ok(carService.getCar(id));
     }
 
-    @GetMapping("/create")
+    @PostMapping("/create")
     public ResponseEntity<CarDTO> create(@RequestBody Car car)
     {
         return new ResponseEntity<>(carService.createCar(car), HttpStatus.CREATED);
     }
 
-    @GetMapping("/update/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<CarDTO> update(@PathVariable("id") int id, @RequestBody Car car)
     {
         return new ResponseEntity<>(carService.updateCar(id, car), HttpStatus.ACCEPTED);
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<CarDTO> delete(@PathVariable("id") int id)
     {
         return carService.deleteCar(id) ? new ResponseEntity<>(HttpStatus.NO_CONTENT) : new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
