@@ -35,19 +35,19 @@ public class UserController
         return ResponseEntity.ok(userService.getUser(id));
     }
 
-    @GetMapping("/create")
+    @PostMapping("/create")
     public ResponseEntity<UserDTO> create(@RequestBody User user)
     {
         return new ResponseEntity<>(userService.createUser(user), HttpStatus.CREATED);
     }
 
-    @GetMapping("/update/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<UserDTO> update(@PathVariable("id") int id, @RequestBody User user)
     {
         return new ResponseEntity<>(userService.updateUser(id, user), HttpStatus.ACCEPTED);
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<UserDTO> delete(@PathVariable("id") int id)
     {
         return !userService.deleteUser(id) ? new ResponseEntity<>(HttpStatus.NO_CONTENT) : new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
