@@ -1,8 +1,10 @@
 package me.lukasz.rest;
 
+import me.lukasz.presistance.domain.Car;
 import me.lukasz.presistance.dto.CarDTO;
 import me.lukasz.services.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,6 +38,10 @@ public class CarController
         return ResponseEntity.ok(carService.getCar(id));
     }
 
-    
+    @GetMapping("/create")
+    public ResponseEntity<CarDTO> create(Car car)
+    {
+        return new ResponseEntity<>(carService.createCar(car), HttpStatus.CREATED);
+    }
 
 }
