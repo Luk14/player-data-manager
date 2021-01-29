@@ -25,6 +25,7 @@ public class CarService
 
     private CarDTO mapToDTO(Car car)
     {
+        if(car==null)return null;
         return modelMapper.map(car, CarDTO.class);
     }
 

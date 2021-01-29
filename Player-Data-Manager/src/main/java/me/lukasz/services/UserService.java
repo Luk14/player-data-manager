@@ -25,6 +25,7 @@ public class UserService
 
     private UserDTO mapToDTO(User user)
     {
+        if(user==null)return null;
         return modelMapper.map(user, UserDTO.class);
     }
 
