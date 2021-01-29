@@ -43,7 +43,7 @@ const readall = () => {
                         p.appendChild(info);
                         for (let x = 0; x < json[i].cars.length; x++) {
                             let a = document.createElement("a");
-                            let infocar = document.createTextNode(` | Car IDs | ${json[i].cars[x].id},`);
+                            let infocar = document.createTextNode(` | Car: ${json[i].cars[x].id},`);
                             a.appendChild(infocar);
                             p.appendChild(a);
                         }
