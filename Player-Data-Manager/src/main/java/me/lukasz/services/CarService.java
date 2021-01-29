@@ -55,7 +55,7 @@ public class CarService
     public boolean deleteCar(int id)
     {
         carRepo.deleteById(id);
-        return !carRepo.existsById(id);
+        return carRepo.existsById(id);
     }
 
 }

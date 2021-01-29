@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.Objects;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -64,5 +65,14 @@ public class UserDTO
     public void setCars(List<CarDTO> cars)
     {
         this.cars = cars;
+    }
+
+    @Override
+    public boolean equals(Object o)
+    {
+        if (this == o) return true;
+        if (!(o instanceof UserDTO)) return false;
+        UserDTO userDTO = (UserDTO) o;
+        return id == userDTO.id && Objects.equals(username, userDTO.username) && Objects.equals(fname, userDTO.fname) && Objects.equals(email, userDTO.email) && Objects.equals(cars, userDTO.cars);
     }
 }

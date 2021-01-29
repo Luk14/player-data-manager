@@ -105,14 +105,14 @@ public class CarServiceTest
     @Test
     public void deleteCarTest()
     {
-        Mockito.when(carRepo.existsById(Mockito.anyInt())).thenReturn(false);
+        Mockito.when(carRepo.existsById(Mockito.anyInt())).thenReturn(true);
         assertThat(carService.deleteCar(Mockito.anyInt())).isTrue();
     }
 
     @Test
     public void deleteCarFailTest()
     {
-        Mockito.when(carRepo.existsById(Mockito.anyInt())).thenReturn(true);
+        Mockito.when(carRepo.existsById(Mockito.anyInt())).thenReturn(false);
         assertThat(carService.deleteCar(Mockito.anyInt())).isFalse();
     }
 
