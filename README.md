@@ -56,7 +56,5 @@ Contributions are what make the open source community such an amazing place to b
 ## ✍️ Authors
 - [@Luk14](https://github.com/Luk14) - Initial work
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
 ## 📝 License
 This project is licensed under the MIT License - see the LICENSE.md file for details
