@@ -25,6 +25,7 @@ public class CarService
 
     private CarDTO mapToDTO(Car car)
     {
+        if(car==null)return null;
         return modelMapper.map(car, CarDTO.class);
     }
 
@@ -54,7 +55,7 @@ public class CarService
     public boolean deleteCar(int id)
     {
         carRepo.deleteById(id);
-        return !carRepo.existsById(id);
+        return carRepo.existsById(id);
     }
 
 }

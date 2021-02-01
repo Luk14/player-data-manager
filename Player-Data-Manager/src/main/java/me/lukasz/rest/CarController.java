@@ -50,6 +50,6 @@ public class CarController
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<CarDTO> delete(@PathVariable("id") int id)
     {
-        return carService.deleteCar(id) ? new ResponseEntity<>(HttpStatus.NO_CONTENT) : new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        return !carService.deleteCar(id) ? new ResponseEntity<>(HttpStatus.NO_CONTENT) : new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
