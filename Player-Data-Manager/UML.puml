@@ -1,0 +1,108 @@
+@startuml
+class me.lukasz.services.UserService {
+- UserRepo userRepo
+- ModelMapper modelMapper
+- UserDTO mapToDTO(User)
++ List<UserDTO> readAll()
++ UserDTO getUser(int)
++ UserDTO createUser(User)
++ UserDTO updateUser(int,User)
++ boolean deleteUser(int)
+}
+class me.lukasz.utils.MyBeanUtil {
++ {static} void mergeNotNull(Object,Object)
+- {static} String[] getNullPropertyNames(Object)
+}
+class me.lukasz.presistance.domain.Car {
+- int id
+- String registration
+- String productionDate
+- String color
+- int topSpeed
+- double zeroToSixty
+- User user
+}
+class me.lukasz.PlayerDataManagerApplication {
++ {static} void main(String[])
+}
+class me.lukasz.presistance.dto.UserDTO {
+- int id
+- String username
+- String fname
+- String email
+- List<CarDTO> cars
++ int getId()
++ void setId(int)
++ String getUsername()
++ void setUsername(String)
++ String getFname()
++ void setFname(String)
++ String getEmail()
++ void setEmail(String)
++ List<CarDTO> getCars()
++ void setCars(List<CarDTO>)
++ boolean equals(Object)
+}
+class me.lukasz.services.CarService {
+- CarRepo carRepo
+- ModelMapper modelMapper
+- CarDTO mapToDTO(Car)
++ List<CarDTO> readAll()
++ CarDTO getCar(int)
++ CarDTO createCar(Car)
++ CarDTO updateCar(int,Car)
++ boolean deleteCar(int)
+}
+interface me.lukasz.presistance.repos.UserRepo {
+}
+class me.lukasz.rest.UserController {
+- UserService userService
++ ResponseEntity<List<UserDTO>> readAll()
++ ResponseEntity<UserDTO> get(int)
++ ResponseEntity<UserDTO> create(User)
++ ResponseEntity<UserDTO> update(int,User)
++ ResponseEntity<UserDTO> delete(int)
+}
+class me.lukasz.presistance.domain.User {
+- int id
+- String username
+- String fname
+- String lname
+- String email
+- List<Car> cars
+}
+interface me.lukasz.presistance.repos.CarRepo {
+}
+class me.lukasz.rest.CarController {
+- CarService carService
++ ResponseEntity<List<CarDTO>> readAll()
++ ResponseEntity<CarDTO> read(int)
++ ResponseEntity<CarDTO> create(Car)
++ ResponseEntity<CarDTO> update(int,Car)
++ ResponseEntity<CarDTO> delete(int)
+}
+class me.lukasz.presistance.dto.CarDTO {
+- int id
+- String registration
+- String productionDate
+- String color
+- int topSpeed
+- double zeroToSixty
+}
+class me.lukasz.config.AppConfig {
++ ModelMapper mapper()
+}
+
+
+org.springframework.data.jpa.repository.JpaRepository <|-- me.lukasz.presistance.repos.UserRepo
+org.springframework.data.jpa.repository.JpaRepository <|-- me.lukasz.presistance.repos.CarRepo
+me.lukasz.PlayerDataManagerApplication <|-- me.lukasz.config.AppConfig
+me.lukasz.PlayerDataManagerApplication <|-- me.lukasz.utils.MyBeanUtil
+me.lukasz.presistance.dto.CarDTO --|> me.lukasz.presistance.repos.CarRepo
+me.lukasz.presistance.dto.UserDTO --|> me.lukasz.presistance.repos.UserRepo
+me.lukasz.presistance.dto.CarDTO <|-- me.lukasz.services.CarService
+me.lukasz.presistance.dto.UserDTO <|-- me.lukasz.services.UserService
+me.lukasz.services.CarService <|-- me.lukasz.rest.CarController
+me.lukasz.services.UserService <|-- me.lukasz.rest.UserController
+me.lukasz.PlayerDataManagerApplication <|-- org.springframework.data.jpa.repository.JpaRepository
+@enduml

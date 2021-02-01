@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Data Managmeant Software</title>
+</head>
+
+<body class="bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">DMS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="userman.html">User Management</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="carman.html">Car Management</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        </br>
+        <div class="row">
+            <!-- Create Car-->
+            <h1 class="text-white">Create Car</h1>
+            <p id="newcar" class="text-white"></p>
+            <div class="col-sm-3">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Registration</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" id="reg">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Production Date</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" id="pdate">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Color</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" id="color">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Top Speed</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" id="topspeed">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Zero To Sixty</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" id="zts">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">User ID</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" id="userid">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-secondary" id="create">Create</button>
+            </div>
+        </div>
+        </br>
+        <div class="row">
+            <!-- Read All Car-->
+            <h1 class="text-white">Read All Cars</h1>
+            <div class="col-sm-5">
+                <p id="allcars" class="text-white"></p>
+                <button type="button" class="btn btn-secondary" id="readall">Read All</button>
+            </div>
+        </div>
+        </br>
+        <div class="row">
+            <!-- REad Car-->
+            <h1 class="text-white">Read Car</h1>
+            <p id="car" class="text-white"></p>
+            <div class="col-sm-3">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Car ID</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" id="carid">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-secondary" id="read">Read</button>
+            </div>
+        </div>
+        </br>
+        <div class="row">
+            <!-- Update Car-->
+            <h1 class="text-white">Update Car</h1>
+            <p id="updatedcar" class="text-white"></p>
+            <div class="col-sm-3">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Car ID</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" id="carid-update">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Registration</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" id="reg-update">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Production Date</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" id="pdate-update">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Color</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" id="color-update">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Top Speed</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" id="topspeed-update">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Zero To Sixty</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" id="zts-update">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">User ID</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" id="userid-update">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-secondary" id="update">Update</button>
+            </div>
+        </div>
+        </br>
+        <div class="row">
+            <!-- Delete Car-->
+            <h1 class="text-white">Delete Car</h1>
+            <p id="deletedcar" class="text-white"></p>
+            <div class="col-sm-3">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Car ID</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" id="carid_del">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-secondary" id="deleteu">Delete</button>
+            </div>
+        </div>
+        </br>
+    </div>
+    <script src="../js/car.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+</body>
+</html>
